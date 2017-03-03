@@ -1,5 +1,8 @@
 #grid {
   /*overflow: hidden;*/
+  /*height: 500px;
+  width: 500px;
+  margin: 0 auto;*/
 }
 
 .lolk {
@@ -8,7 +11,8 @@
   width: 83.5px;
   /*float:left;*/
   display: inline-block;
-  margin-right: 2px;
+  /*margin-right: 2px;*/
+  /*margin-bottom: -2px;*/
 }
 
 

@@ -5,9 +5,13 @@ $(document).ready(function(){
 });
 
 function makeGrid() {
-  for(i=0; i<256; i++) {
+  res = prompt("Enter pixels. eg enter 64 for  64x64");
+
+  for(i=0; i<Math.pow(res,2); i++) {
     $('#grid').append("<div class='lolk'></div>");
   }
+  $('.lolk').height(688/res);
+  $('.lolk').width(1336/res);
   plot();
 };
 
