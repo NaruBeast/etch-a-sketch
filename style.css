@@ -1,0 +1,22 @@
+#grid {
+  /*overflow: hidden;*/
+}
+
+.lolk {
+  background-color: #232323;
+  height: 43px;
+  width: 83.5px;
+  /*float:left;*/
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.k {
+  /*left: 0;
+  position:absolute;*/
+
+}
+
+.a {
+  background-color: red;
+}
