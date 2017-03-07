@@ -1,4 +1,5 @@
 var res = 16;
+var clickCheck = 0;
 
 $(document).ready(function(){
   makeGrid();
@@ -8,7 +9,6 @@ $(document).ready(function(){
 });
 
 function makeGrid() {
-/*  res = prompt("Enter pixels. eg enter 64 for  64x64");*/
 
   for(i=0; i<Math.pow(res,2); i++) {
     $('.grid').append("<div class='lolk'></div>");
@@ -19,7 +19,32 @@ function makeGrid() {
 };
 
 function plot(){
+  if(clickCheck === 0) {
+    return;
+  }
+  else {
   $('div').mouseenter(function(){
     $(this).addClass('a');
   });
 }
+}
+
+function pixelCount() {
+  res = prompt("Enter pixels. eg enter 64 for 64x64");
+  makeGrid();
+}
+
+
+  $('.grid').click(function(){
+    if(clickCheck===0){
+      clickCheck = 1;
+      plot();
+    }
+    else {
+      clickCheck = 0;
+    }
+  });
+
+
+/*$('.lolk').width($('.grid').width()/res);
+$('.lolk').height($('.grid > div').width()/res);*/

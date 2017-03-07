@@ -1,19 +1,19 @@
 .container {
-  background-color: black;
-  position: relative;
+  /*background-color: black;*/
   margin: 0 auto;
   height: 100%;
 }
 .grid {
   /*overflow: hidden;*/
   height: calc(100% - 110px);
+  /*border: 3px solid black;*/
   width: 800px;
   margin: 50px auto;
   background-color: #ffffff;
 }
 
 .grid div {
-  float: left;
+  float: left; /*takes care of the spaces b/w individual lines*/
 }
 
 .lolk {
