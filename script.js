@@ -2,16 +2,19 @@ var res = 16;
 
 $(document).ready(function(){
   makeGrid();
+  $('div').click(function(){
+    stopGrid();
+  });
 });
 
 function makeGrid() {
-  res = prompt("Enter pixels. eg enter 64 for  64x64");
+/*  res = prompt("Enter pixels. eg enter 64 for  64x64");*/
 
   for(i=0; i<Math.pow(res,2); i++) {
-    $('#grid').append("<div class='lolk'></div>");
+    $('.grid').append("<div class='lolk'></div>");
   }
-  $('.lolk').height(688/res);
-  $('.lolk').width(1336/res);
+  $('.lolk').height(500/res);
+  $('.lolk').width(800/res);
   plot();
 };
 

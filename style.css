@@ -1,13 +1,24 @@
-#grid {
+.container {
+  background-color: black;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+.grid {
   /*overflow: hidden;*/
-  /*height: 500px;
-  width: 500px;
-  margin: 0 auto;*/
+  height: calc(100% - 110px);
+  width: 800px;
+  margin: 50px auto;
+  background-color: #ffffff;
+}
+
+.grid div {
+  float: left;
 }
 
 .lolk {
   background-color: #232323;
-  height: 43px;
+  height: 100px;
   width: 83.5px;
   /*float:left;*/
   display: inline-block;
