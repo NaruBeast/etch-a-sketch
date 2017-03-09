@@ -1,50 +1,35 @@
-var res = 16;
-var clickCheck = 0;
-
+var i;
+var res = 48;
+var gridElement = $('.grid');
+var gridDiv = $('.grid > div');
 $(document).ready(function(){
-  makeGrid();
-  $('div').click(function(){
-    stopGrid();
-  });
+	drawGrid();
 });
 
-function makeGrid() {
+function drawGrid() {
 
-  for(i=0; i<Math.pow(res,2); i++) {
-    $('.grid').append("<div class='lolk'></div>");
-  }
-  $('.lolk').height(500/res);
-  $('.lolk').width(800/res);
-  plot();
-};
-
-function plot(){
-  if(clickCheck === 0) {
-    return;
-  }
-  else {
-  $('div').mouseenter(function(){
-    $(this).addClass('a');
-  });
-}
+	for(i=0; i<Math.pow(res,2); i++) {
+		$(gridElement).append("<div class='lolk'></div>");
+	}
+	$('.grid > div').width($('.grid').width()/res);
+	$('.grid > div').height($('.grid>div').width());
+	plot();
 }
 
-function pixelCount() {
-  res = prompt("Enter pixels. eg enter 64 for 64x64");
-  makeGrid();
+function plot() {
+	$('.grid > div').mouseenter(function(e){
+		console.log("cjksadnckjsdc");
+		$(e.currentTarget).addClass('a');
+	});
 }
 
+function clearGrid() {
+	$('.grid > div').removeClass('a');
+}
 
-  $('.grid').click(function(){
-    if(clickCheck===0){
-      clickCheck = 1;
-      plot();
-    }
-    else {
-      clickCheck = 0;
-    }
-  });
-
-
-/*$('.lolk').width($('.grid').width()/res);
-$('.lolk').height($('.grid > div').width()/res);*/
+function pixelDraw() {
+	res = prompt("Enter resolution eg. 64 for 64x64 (max. 128)");
+	//clearGrid();
+	$('.grid').empty(); //removes all child elements of '.grid'
+	drawGrid();
+}
