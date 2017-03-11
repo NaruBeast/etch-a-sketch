@@ -2,6 +2,7 @@ var i;
 var res = 48;
 var gridElement = $('.grid');
 var gridDiv = $('.grid > div');
+var clickFlag = 0;
 $(document).ready(function(){
 	drawGrid();
 });
@@ -16,8 +17,13 @@ function drawGrid() {
 	plot();
 }
 
+
+
 function plot() {
 	$('.grid > div').mouseenter(function(e){
+		if(clickFlag===0) {
+			return;
+		}
 		console.log("cjksadnckjsdc");
 		$(e.currentTarget).addClass('a');
 	});
@@ -33,3 +39,12 @@ function pixelDraw() {
 	$('.grid').empty(); //removes all child elements of '.grid'
 	drawGrid();
 }
+
+$('.grid').click(function() {
+	if(clickFlag===0) {
+		clickFlag = 1;
+	}
+	else {
+		clickFlag = 0;
+	}
+});
